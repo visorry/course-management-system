@@ -1,20 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const courseController = require('../controllers/courseController');
+const { authenticateUser, authorizeTeacher } = require('../middleware/authMiddleware');
 
 // Retrieve all courses
-router.get('/', courseController.getAllCourses);
-
-// Retrieve a specific course
-router.get('/:id', courseController.getCourseById);
+router.get('/', authenticateUser, courseController.getAllCourses);
 
 // Create a new course (for teachers only)
-router.post('/', courseController.createCourse);
+router.post('/', authenticateUser, authorizeTeacher, courseController.createCourse);
 
 // Update a course (for teachers only)
-router.put('/:id', courseController.updateCourse);
+router.put('/:id', authenticateUser, authorizeTeacher, courseController.updateCourse);
 
 // Delete a course (for teachers only)
-router.delete('/:id', courseController.deleteCourse);
+router.delete('/:id', authenticateUser, authorizeTeacher, courseController.deleteCourse);
 
 module.exports = router;
