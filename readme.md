@@ -63,7 +63,7 @@ This project is a RESTful API for a Course Management System within a Learning M
    DB_NAME=
    DB_USER=
    DB_PASSWORD=
-   DB_HOST=pg-
+   DB_HOST=
    DB_PORT=
    JWT_SECRET=
    ```
