@@ -183,10 +183,11 @@ To test the API, you can use Postman. Here's a collection of requests for Postma
 - **Body**:
   ```json
   {
-    "name": "Updated Course",
+    "name": "Updated Course" ,
     "description": "Updated Description"
   }
   ```
+
 
 ### Delete Course
 
