@@ -6,6 +6,9 @@ const { authenticateUser, authorizeTeacher } = require('../middleware/authMiddle
 // Retrieve all courses
 router.get('/', authenticateUser, courseController.getAllCourses);
 
+// Retrieve a specific course by ID
+router.get('/:id', authenticateUser, courseController.getCourseById);
+
 // Create a new course (for teachers only)
 router.post('/', authenticateUser, authorizeTeacher, courseController.createCourse);
 
