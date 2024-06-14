@@ -196,13 +196,13 @@ To test the API, you can use Postman. Here's a collection of requests for Postma
 
 ### Get User Progress
 
-- **Endpoint**: `GET /users/:id/progress`
+- **Endpoint**: `GET progress/:id`
 - **Headers**: 
   - `Authorization:  <your_token>`
 
 ### Update User Progress
 
-- **Endpoint**: `POST /users/:id/progress`
+- **Endpoint**: `POST progress/:id`
 - **Headers**: 
   - `Content-Type: application/json`
   - `Authorization:  <your_token>`
